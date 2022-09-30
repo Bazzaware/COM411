@@ -1,45 +1,51 @@
 import os
-exitProgram = True
+from telnetlib import STATUS
+runProgram = True
+numberOfImages = 4
 
 
-def DisplayMenu():
+def DisplayMenu(nuberOfImages):
     print("Press 0 to select exit from program")
-    for option in range(1, 2):
+    for option in range(1, nuberOfImages):
         print("Press", option, " to select ASCII image ", option)
 
 
-class SelectedImageId():
-    def __init__(self, selectedId):
-        self.id = selectedId
-        global exitProgram
-        if (self.id.isdigit() and 1 <= int(self.id) <= 9):
-            print("\nYou selected ", self.id)
-        elif (int(self.id) == 0):
-            print("Goodbye.")
-            exitProgram = False
-        else:
-            print("Invalid selection. \nPlease try again.\n")
-            main()
+def SelectedImageId(id):
+    global runProgram
+    global numberOfImages
+
+    if (id.isdigit() and 1 <= int(id) <= numberOfImages):
+        print("\nYou selected ", id)
+        return int(id)
+    elif (int(id) == 0):
+        print("Goodbye.")
+        runProgram = False
+    else:
+        print("Invalid selection. \nPlease try again.\n")
+        main()
 
 
-class DisplayImage():
-    def __init__(self, selectedId):
-        self.id = selectedId
-        os.system('cls')
-        print("display image")
-        input("Press any key to continue.")
+def DisplayImage(selectedId):
+    os.system('cls')
+    match selectedId:
+        case 1:
+            print("display image")
+        case _:
+            print("I cant find that image!!")
+
+    input("Press any key to continue.")
 
 
 def main():
     print("This is an example for outputing ACSII art")
 
-    while (exitProgram):
-        DisplayMenu()
-        selected = input(
+    while (runProgram):
+        DisplayMenu(numberOfImages)
+        userInput = input(
             "\n Please select a number to display some ASCII art?:")
-        selection = SelectedImageId(selected)
-        if (exitProgram):
-            DisplayImage(selection)
+        selectedId = SelectedImageId(userInput)
+        if (runProgram):
+            DisplayImage(selectedId)
 
 
 if __name__ == "__main__":
