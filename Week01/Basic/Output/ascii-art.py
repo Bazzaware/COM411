@@ -4,6 +4,7 @@ numberOfImages = 4
 
 
 def DisplayMenu(nuberOfImages):
+    os.system('cls')
     print("Press 0 to select exit from program")
     for option in range(1, nuberOfImages):
         print("Press", option, " to select ASCII image ", option)
@@ -28,11 +29,18 @@ def DisplayImage(selectedId):
     os.system('cls')
     match selectedId:
         case 1:
-            print("display image")
+            image1()
         case _:
             print("I cant find that image!!")
 
-    input("Press any key to continue.")
+    input("\nPress any key to continue.")
+
+
+def image1():
+    print("##########")
+    print("#        #")
+    print("#        #")
+    print("##########")
 
 
 def main():
