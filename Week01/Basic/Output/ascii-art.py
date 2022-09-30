@@ -1,5 +1,4 @@
 import os
-from telnetlib import STATUS
 runProgram = True
 numberOfImages = 4
 
