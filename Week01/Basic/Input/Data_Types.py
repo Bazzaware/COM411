@@ -7,9 +7,8 @@ class Human():
         self.age = age
         self.heightMeters = height
         self.weight = weight
-        self.heightCentimeters = height / 100
         self.bmi = "{:.2f}".format(
-            self.weight / (self.heightCentimeters/100)**2)
+            self.weight / (self.heightMeters/100)**2)
 
 
 def main():
