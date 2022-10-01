@@ -11,9 +11,19 @@ class MyFirstTests(unittest.TestCase):
         result = HealthLevels()
 
         # Assert
-        self.assertEqual(result.lives, "♥♥♥♥♥♥")
-        self.assertEqual(result.energy, "***********")
-        self.assertEqual(result.sheild, "♦♦♦♦♦♦♦♦♦")
+        self.assertEqual(result.lives, 6)
+        self.assertEqual(result.energy, 9)
+        self.assertEqual(result.sheild, 15)
+
+    def test_healthStatus(self):
+        # result = HealthLevels(6,10.8)
+        # Arrange
+        result = HealthLevels()
+
+        # Assert
+        self.assertEqual(result.status["lives"], "♥♥♥♥♥♥")
+        self.assertEqual(result.status["energy"], "***********")
+        self.assertEqual(result.status["sheild"], "♦♦♦♦♦♦♦♦♦")
 
     def test_health(self):
         # Arrange
