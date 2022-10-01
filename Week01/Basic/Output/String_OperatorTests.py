@@ -6,21 +6,20 @@ import unittest
 class MyFirstTests(unittest.TestCase):
 
     def test_healthLevels(self):
-        # result = HealthLevels(6,10.8)
         # Arrange
-        result = HealthLevels()
+        result = HealthLevels(6, 10, 8)
 
         # Assert
         self.assertEqual(result.lives, 6)
-        self.assertEqual(result.energy, 9)
-        self.assertEqual(result.sheild, 15)
+        self.assertEqual(result.energy, 10)
+        self.assertEqual(result.sheild, 8)
 
     def test_healthStatus(self):
         # Arrange
         result = HealthLevels(7, 11, 9)
 
         # Assert
-        self.assertEqual(result.status["lives"], "♥♥♥♥♥♥")
+        self.assertEqual(result.status["lives"], "♥♥♥♥♥♥♥")
         self.assertEqual(result.status["energy"], "***********")
         self.assertEqual(result.status["sheild"], "♦♦♦♦♦♦♦♦♦")
 

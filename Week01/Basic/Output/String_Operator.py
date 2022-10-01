@@ -6,9 +6,9 @@ class HealthLevels():
         self.sheild = shield
 
         self.status = {
-            "lives": "♥♥♥♥♥♥",
-            "energy": "***********",
-            "sheild": "♦♦♦♦♦♦♦♦♦"
+            "lives": set_health_icon("♥", lives),
+            "energy": set_health_icon("*", energy),
+            "sheild": set_health_icon("♦", shield)
         }
 
 
