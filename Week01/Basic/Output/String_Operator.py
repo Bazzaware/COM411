@@ -4,10 +4,10 @@ def main():
 
 
 class HealthLevels():
-    def __init__(self, health, energy, shield):
-        self.health = health
-        self.energy = energy
-        self.sheild = shield
+    def __init__(self):
+        self.lives = "♥♥♥♥♥"
+        self.energy = "**********"
+        self.sheild = "♦♦♦♦♦♦♦♦♦♦"
 
 
 def health():
