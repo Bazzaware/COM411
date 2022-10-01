@@ -5,18 +5,18 @@ import unittest
 
 class MyFirstTests(unittest.TestCase):
 
-    def test_HealtLevals(self):
+    def test_healtLevels(self):
         # Arrange
-        result = HealtLevals("♥")
+        result = HealtLevels("♥")
 
         # Act
 
         # Assert
         self.assertEqual(result.health, "♥")
 
-    def test_Health(self):
+    def test_health(self):
         # Arrange
-        result = Health()
+        result = health()
 
         # Act
 
