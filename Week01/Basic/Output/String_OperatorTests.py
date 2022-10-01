@@ -3,7 +3,7 @@ from String_Operator import *
 import unittest
 
 
-class MyFirstTests(unittest.TestCase):
+class StringOperatorTests(unittest.TestCase):
 
     def test_healthLevels(self):
         # Arrange
@@ -21,16 +21,7 @@ class MyFirstTests(unittest.TestCase):
         # Assert
         self.assertEqual(result.status["lives"], "♥♥♥♥♥♥♥")
         self.assertEqual(result.status["energy"], "***********")
-        self.assertEqual(result.status["sheild"], "♦♦♦♦♦♦♦♦♦")
-
-    def test_health(self):
-        # Arrange
-        result = health()
-
-        # Act
-
-        # Assert
-        self.assertEqual(result, "♥")
+        self.assertEqual(result.status["shield"], "♦♦♦♦♦♦♦♦♦")
 
     def test_health_icon(self):
         self.assertEqual(set_health_icon("♥", 4), "♥♥♥♥")

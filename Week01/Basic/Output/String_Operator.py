@@ -1,3 +1,5 @@
+import os
+
 
 class HealthLevels():
     def __init__(self, lives, energy, shield):
@@ -8,12 +10,8 @@ class HealthLevels():
         self.status = {
             "lives": set_health_icon("♥", lives),
             "energy": set_health_icon("*", energy),
-            "sheild": set_health_icon("♦", shield)
+            "shield": set_health_icon("♦", shield)
         }
-
-
-def health():
-    return "♥"
 
 
 def set_health_icon(icon, value):
@@ -21,8 +19,18 @@ def set_health_icon(icon, value):
 
 
 def main():
-    msg = "main"
-    print(f"We are at {msg}")
+    os.system("cls")
+    question = "Please enter the"
+    lives = int(input(f"{question} number of lives.\n = "))
+    energy = int(input(f"\n{question} energy level.\n = "))
+    shield = int(input(f"\n{question} shield level.\n = "))
+
+    beeps_health = HealthLevels(lives, energy, shield)
+
+    print("\nHealth has been set.\n")
+    print(f"Lives: {beeps_health.status['lives']}")
+    print(f"Energy: {beeps_health.status['energy']}")
+    print(f"Shield: {beeps_health.status['shield']}")
 
 
 if __name__ == "__main__":
