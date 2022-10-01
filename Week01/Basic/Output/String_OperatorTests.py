@@ -5,9 +5,9 @@ import unittest
 
 class MyFirstTests(unittest.TestCase):
 
-    def test_healtLevels(self):
+    def test_healthLevels(self):
         # Arrange
-        result = HealtLevels("♥")
+        result = HealthLevels("♥")
 
         # Act
 
@@ -22,3 +22,8 @@ class MyFirstTests(unittest.TestCase):
 
         # Assert
         self.assertEqual(result, "♥")
+
+    def test_health_icon(self):
+        self.assertEqual(set_health_icon("♥", 4), "♥♥♥♥")
+        self.assertEqual(set_health_icon("*", 5), "*****")
+        self.assertEqual(set_health_icon("♦", 10), "♦♦♦♦♦♦♦♦♦♦")
