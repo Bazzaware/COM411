@@ -16,9 +16,8 @@ class MyFirstTests(unittest.TestCase):
         self.assertEqual(result.sheild, 15)
 
     def test_healthStatus(self):
-        # result = HealthLevels(6,10.8)
         # Arrange
-        result = HealthLevels()
+        result = HealthLevels(7, 11, 9)
 
         # Assert
         self.assertEqual(result.status["lives"], "♥♥♥♥♥♥")

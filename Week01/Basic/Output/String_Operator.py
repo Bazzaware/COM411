@@ -1,9 +1,9 @@
 
 class HealthLevels():
-    def __init__(self):
-        self.lives = 6
-        self.energy = 9
-        self.sheild = 15
+    def __init__(self, lives, energy, shield):
+        self.lives = lives
+        self.energy = energy
+        self.sheild = shield
 
         self.status = {
             "lives": "♥♥♥♥♥♥",
