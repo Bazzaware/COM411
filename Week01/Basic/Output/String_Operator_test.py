@@ -20,7 +20,7 @@ class StringOperatorTests(unittest.TestCase):
 
         # Assert
         self.assertEqual(result.status["lives"], "♥♥♥♥♥♥♥")
-        self.assertEqual(result.status["energy"], "***********")
+        self.assertEqual(result.status["energy"], "✸✸✸✸✸✸✸✸✸✸✸")
         self.assertEqual(result.status["shield"], "♦♦♦♦♦♦♦♦♦")
 
     def test_health_icon(self):
