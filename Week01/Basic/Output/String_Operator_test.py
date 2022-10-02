@@ -1,4 +1,3 @@
-from types import NoneType
 from String_Operator import *
 import unittest
 
