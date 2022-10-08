@@ -18,7 +18,8 @@ def main():
     if (result == "equal"):
         print("Both numbers are equal.")
     else:
-        print(f"The {result} number is the smallest.")
+        print(f"\nThe {result} number is the smallest.")
+
 
 if (__name__ == "__main__"):
     main()
