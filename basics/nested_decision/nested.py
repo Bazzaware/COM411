@@ -1,4 +1,5 @@
 from shared_code import clear_terminal
+
 def main():
     clear_terminal()
     cover = input("What type of cover does the book have?\n(soft\\hard) ")
@@ -8,7 +9,7 @@ def main():
         if (binding.lower() == "yes"):
             print( "Soft cover, perfect bound books are very popular!" )
         else:
-            print( "Soft covers with coils or stitches are great for short books")
+            print( "Soft covers with coils or stitches are great for short books.")
 
     elif (cover.lower() == "hard"):
         print("Books with hard covers can be more expensive!")

@@ -1,3 +1,4 @@
+
 from shared_code import clear_terminal
 
 def is_odd_number(number):

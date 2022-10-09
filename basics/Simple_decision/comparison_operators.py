@@ -1,6 +1,5 @@
 from shared_code import clear_terminal
 
-
 def number_comparison(first_number, second_number):
     if first_number < second_number:
         return "first"

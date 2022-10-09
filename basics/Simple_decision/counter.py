@@ -1,4 +1,4 @@
-from shared_code import clear_terminal
+from basics.shared_code import clear_terminal
 from modulo_operator import is_odd_number
 
 
