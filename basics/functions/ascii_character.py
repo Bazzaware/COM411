@@ -4,7 +4,8 @@ def main():
     if code in range(32, 127):
         char = chr(code)
         print(f"The character represented by the ASCII code {code} is {char}")
-
+    else:
+        print("Please enter a number in the range of 32 and 126.")
     print("Program ended.")
 
 
