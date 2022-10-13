@@ -1,5 +1,3 @@
-def OddNumberCheck(number):
-    return False
 
 
 def main():
