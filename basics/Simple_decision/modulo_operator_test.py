@@ -1,4 +1,5 @@
 import unittest
+from modulo_operator import *
 
 
 class StringOperatorTests(unittest.TestCase):
