@@ -9,7 +9,6 @@ def calc_avg_weight(weight01,weight02):
     return (sum_weights(weight01,weight02) / 2)
 
 
-
 def main():
     beepWeight = int(input("What is the weight of Beep?\n"))
     bopWeight = int(input("\nWhat is the weight of Bop?\n"))
@@ -22,7 +21,6 @@ def main():
         print(f"\nThe average weight  is {average}.")
     else:
         print("Incorrect selection")
-
 
 
 if (__name__ == "__main__"):
