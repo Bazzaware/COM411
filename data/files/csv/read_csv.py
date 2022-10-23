@@ -1,6 +1,7 @@
 import csv
 import os
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def read(filePath):
     with open(filePath) as file:
@@ -13,8 +14,7 @@ def read(filePath):
 
 
 def main():
-    cwd = os.getcwd()
-    sourceFile = f"{cwd}/data/files/csv/bots.csv"
+    sourceFile = f"{ROOT_DIR}/bots.csv"
     read(sourceFile)
 
 
