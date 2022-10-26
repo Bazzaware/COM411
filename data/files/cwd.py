@@ -11,16 +11,14 @@ def filesInFolder(path):
     return files
 
 
-def run():
+
+def main():
     print(f"Processing....")
     currentWorkingDirectory = cwd()
     print(f"The current working directory is {currentWorkingDirectory}")
     print(f"The directory contains the following files:")
     for file in filesInFolder(currentWorkingDirectory):
         print(f"{file}")
-
-def main():
-    run()
 
 
 if (__name__ == "__main__"):
