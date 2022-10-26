@@ -7,7 +7,7 @@ def directions():
 
 
 def menu():
-    print("Please select a direction:")
+    print("\nPlease select a direction:")
     _directions = directions()
     for directionIndex in range(len(_directions)):
         print(f"{directionIndex} : {_directions[directionIndex]}")
