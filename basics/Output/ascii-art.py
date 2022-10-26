@@ -25,19 +25,27 @@ def SelectedImageId(id):
         runProgram = False
     else:
         print("Invalid selection. \nPlease try again.\n")
-        sleep(2)
+        input("\nPress ENTER to continue.")
         main()
 
 
 def DisplayImage(selectedId):
     os.system('cls')
-    match selectedId:
-        case 1:
-            Image1()
-        case 2:
-            Image2()
-        case _:
-            print("I cant find that image!!")
+    if(selectedId == 1):
+        Image1()
+    elif(selectedId == 2):
+        Image2()
+    else:
+        print(f"Invalid selection {selectedId}.")
+
+    # Only works in version 3.10 or above.
+    # match selectedId:
+    #     case 1:
+    #         Image1()
+    #     case 2:
+    #         Image2()
+    #     case _:
+    #         print("I cant find that image!!")
 
     input("\nPress ENTER to continue.")
 
