@@ -110,7 +110,7 @@ def main():
     displayMenu()
     selection = int(input("\n"))
 
-    print(f"You have selected option: {selection}")
+    print(f"You have selected option: {selection}\n")
     if (selection == 1):
         displayPassengerName()
     elif (selection == 2):
@@ -121,6 +121,8 @@ def main():
         displayPassengersPerAgeGroup()
     elif (selection == 5):
         displaySurvivorsPerAgeGroup()
+    else:
+        print(f"Invalid input {selection}!")
 
 
 if __name__ == "__main__":
