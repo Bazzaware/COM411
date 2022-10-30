@@ -53,11 +53,35 @@ def displayPassengerByGender():
     print(f"females: {female}, males: {male}")
 
 
+def displayPassengersPerAgeGroup():
+    children = 0
+    adults = 0
+    elderly = 0
+    unknown = 0
+
+    for person in records:
+        if (person[5] != ""):
+            age = float(person[5])
+            if (age != ""):
+                if (age < 18):
+                    children += 1
+                elif (age < 65):
+                    adults += 1
+                else:
+                    elderly += 1
+        else:
+            unknown += 1
+    print(len(records))
+    print(children+adults+unknown)
+    print(
+        f"children: {children}, adults: {adults}, elderly: {elderly}, unknown: {unknown}")
+
+
 def main():
     mymod.clear_terminal()
     cwd = os.getcwd()
     filePath = cwd + "/data/titanic/titanic.csv"
-    titanicData = loadData(filePath)
+    loadData(filePath)
     print(f"Successfully loaded {len(records)} records.")
     displayMenu()
     selection = int(input("\n"))
@@ -69,6 +93,8 @@ def main():
         displayNumberOfSurvivors()
     elif (selection == 3):
         displayPassengerByGender()
+    elif (selection == 4):
+        displayPassengersPerAgeGroup()
 
 
 if __name__ == "__main__":
