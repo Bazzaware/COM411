@@ -36,11 +36,21 @@ def displayPassengerName():
 def displayNumberOfSurvivors():
     numberSurvived = 0
     for person in records:
-        if(person[1] == "1"):
+        if (person[1] == "1"):
             numberSurvived += 1
 
     print(f"{numberSurvived} passengers survived.")
 
+
+def displayPassengerByGender():
+    male = 0
+    female = 0
+    for person in records:
+        if (person[4] == "male"):
+            male += 1
+        else:
+            female += 1
+    print(f"females: {female}, males: {male}")
 
 
 def main():
@@ -55,8 +65,11 @@ def main():
     print(f"You have selected option: {selection}")
     if (selection == 1):
         displayPassengerName()
-    elif(selection == 2):
+    elif (selection == 2):
         displayNumberOfSurvivors()
+    elif (selection == 3):
+        displayPassengerByGender()
+
 
 if __name__ == "__main__":
     main()
