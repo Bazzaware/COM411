@@ -33,6 +33,16 @@ def displayPassengerName():
         print(passenger[3])
 
 
+def displayNumberOfSurvivors():
+    numberSurvived = 0
+    for person in records:
+        if(person[1] == "1"):
+            numberSurvived += 1
+
+    print(f"{numberSurvived} passengers survived.")
+
+
+
 def main():
     mymod.clear_terminal()
     cwd = os.getcwd()
@@ -45,7 +55,8 @@ def main():
     print(f"You have selected option: {selection}")
     if (selection == 1):
         displayPassengerName()
-
+    elif(selection == 2):
+        displayNumberOfSurvivors()
 
 if __name__ == "__main__":
     main()
