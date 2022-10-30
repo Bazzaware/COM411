@@ -26,6 +26,13 @@ def displayMenu():
     for option in menuOptions:
         print(option)
 
+
+def displayPassengerName():
+    print(f"The names of the passengers are...")
+    for passenger in records:
+        print(passenger[3])
+
+
 def main():
     mymod.clear_terminal()
     cwd = os.getcwd()
@@ -36,6 +43,8 @@ def main():
     selection = int(input("\n"))
 
     print(f"You have selected option: {selection}")
+    if (selection == 1):
+        displayPassengerName()
 
 
 if __name__ == "__main__":
