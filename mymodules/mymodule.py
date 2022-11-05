@@ -3,9 +3,7 @@ from os import system
 
 
 def clear_terminal():
-    if platform == "linux" or platform == "linux2":
-        system("clear")
-    elif platform == "win32":
+    if platform == "win32":
         system("cls")
-
-
+    else:
+        system("clear")
