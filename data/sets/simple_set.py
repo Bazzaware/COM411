@@ -1,6 +1,6 @@
-import mymodule as mymod
+import mymodules.mymodule as mymod
 
-def observed ():
+def observed():
     observations = set()
     observations = {"Flying Car", "Sky Scraper",
                     "Sky Scraper", "Laser", "Dome", "Dome"}
