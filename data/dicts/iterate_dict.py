@@ -17,7 +17,7 @@ def display_values(data: dict):
 
 
 def display_items(data: dict):
-    """Display key valye pairs from dictionary"""
+    """Display key value pairs from dictionary"""
     print("\nPairs:")
     for key, value in data.items():
         print(f"{key}: {value}")
@@ -27,11 +27,10 @@ def run():
     """Initialise program"""
     clear_terminal()
     pattern_data = pattern()
-    print("Dictionary:")
-    print(pattern_data)
-    print(display_keys(pattern_data))
-    print(display_values(pattern_data))
-    print(display_items(pattern_data))
+    print(f"Dictionary: \n{pattern_data}")
+    display_keys(pattern_data)
+    display_values(pattern_data)
+    display_items(pattern_data)
 
 
 if __name__ == "__main__":
