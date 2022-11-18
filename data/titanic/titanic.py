@@ -102,7 +102,7 @@ def displaySurvivorsPerAgeGroup():
 
 
 def main():
-    mymod.clear_terminal()
+    clear_terminal()
     cwd = os.getcwd()
     filePath = cwd + "/data/titanic/titanic.csv"
     loadData(filePath)
@@ -111,7 +111,7 @@ def main():
     selection = int(input("\n"))
 
     print(f"You have selected option: {selection}\n")
-    if (selection == 1):
+    if selection == 1:
         displayPassengerName()
     elif (selection == 2):
         displayNumberOfSurvivors()
