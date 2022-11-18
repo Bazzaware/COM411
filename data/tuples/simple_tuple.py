@@ -1,4 +1,4 @@
-import mymodule
+from mymodules.mymodule import *
 
 
 def likelihood():
@@ -7,7 +7,7 @@ def likelihood():
 
 
 def main():
-    mymodule.clear_terminal()
+    clear_terminal()
     value = likelihood()
     print(f"Minimum likelihood of falling: {value} %")
 
