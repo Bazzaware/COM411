@@ -1,9 +1,11 @@
 import csv
-from tui import started,menu
+
 import process
+from tui import started, menu, error
+
 
 def read_data(file_path: str) -> list:
-    '''Reads in data from a CVS file and returns a list with headers removed.'''
+    """Reads in data from a CVS file and returns a list with headers removed."""
     started(file_path)
     data = list()
     with open(file_path, "r", encoding="utf-8") as csv_file:
@@ -28,7 +30,7 @@ def run():
         elif selection == "exit":
             break
         else:
-            tui.error("Invalid Selection!")
+            error("Invalid Selection!")
 
 
 if __name__ == "__main__":

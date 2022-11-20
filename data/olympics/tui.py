@@ -1,3 +1,5 @@
+from typing import Dict, Set
+
 _LINE_LENGTH = 85
 
 
@@ -29,7 +31,7 @@ def menu() -> str:
     return user_selection.strip().lower()
 
 
-def display_medal_tally(tally: dict[str, int]) -> None:
+def display_medal_tally(tally: Dict[str, int]) -> None:
     """Displays medal tally"""
     print(f"| {'Gold':<10} | {tally['Gold']:<10} |")
     print(f"| {'Silver': <10} | {tally['Silver']:<10} |")
@@ -37,7 +39,7 @@ def display_medal_tally(tally: dict[str, int]) -> None:
     print(f"| {'Bronze': <10 }| {tally['Bronze']:<10} |")
 
 
-def display_team_medal_tally(team_tally: dict[str, dict[str, int]]) -> None:
+def display_team_medal_tally(team_tally: Dict[str, Dict[str, int]]) -> None:
     """display the name of each team and the medals the team has one"""
     for team, tally in team_tally.items():
         print(team)
@@ -45,7 +47,7 @@ def display_team_medal_tally(team_tally: dict[str, dict[str, int]]) -> None:
             f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
 
 
-def display_years(years: set[int]) -> None:
-    """Sort the years into descending order (largest first) and display each year on a new line"""
+def display_years(years: Set[int]) -> None:
+    """Sort the years into descending order (the largest first) and display each year on a new line"""
     for year in sorted(years, reverse=True):
         print(year)
