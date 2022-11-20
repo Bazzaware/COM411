@@ -11,7 +11,7 @@ def pattern() -> Dict[str, int]:
     return sequences
 
 
-def run():
+def run() -> None:
     """dummy string"""
     print(pattern())
 

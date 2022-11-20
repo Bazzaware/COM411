@@ -2,21 +2,21 @@ from simple_dict import pattern
 from mymodules.mymodule import clear_terminal
 
 
-def display_keys(data: dict):
+def display_keys(data: dict) -> None:
     """Displays keys from a dictionary"""
     print("\nKeys:")
     for key in data.keys():
         print(f"{key}")
 
 
-def display_values(data: dict):
+def display_values(data: dict) -> None:
     """Displays values from a dictionary"""
     print("\nValues:")
     for value in data.values():
         print(f"{value}")
 
 
-def display_items(data: dict):
+def display_items(data: dict) -> None:
     """Display key value pairs from dictionary"""
     print("\nPairs:")
     for key, value in data.items():
