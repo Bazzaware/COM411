@@ -4,13 +4,17 @@ COL_YEAR = 9
 
 
 class Medals():
-    '''Represents a dictionary of medals'''
+    '''Represents a dictionary of medals : '''
 
     def __init__(self) -> dict[str, int]:
         '''Initializes a dictionary with zero values for the medals.
         dict[str, int]'''
 
         self.tally = dict({"Gold": 0, "Silver": 0, "Bronze": 0})
+
+    def add_medal(self, medal):
+        '''Adds medal by name to medals dictionary'''
+        self.tally[medal] += 1
 
 
 def list_years(data: list) -> set:
@@ -28,7 +32,7 @@ def tally_medals(data: list) -> Medals:
     for line in data:
         medal = line[COL_MEDAL]
         if medal in ("Gold", "Silver", "Bronze"):
-            medals.tally[medal] += 1
+            medals.add_medal(medal)
     return medals.tally
 
 
