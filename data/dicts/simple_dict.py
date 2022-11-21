@@ -1,7 +1,4 @@
-from typing import Dict
-
-
-def pattern() -> Dict[str, int]:
+def pattern() -> dict[str, int]:
     """Returns a dictionary"""
     sequences = dict({
         'Short Sequence': 3,

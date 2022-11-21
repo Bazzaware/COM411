@@ -1,7 +1,11 @@
 import csv
+import os
+from tui import started, menu, error, display_years, display_medal_tally, display_team_medal_tally
 
-import process
-from tui import started, menu, error
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+FILE_PATH = f"{ROOT_DIR}/athlete_events.csv"
 
 
 def read_data(file_path: str) -> list:
@@ -17,17 +21,19 @@ def read_data(file_path: str) -> list:
 
 
 def run():
-    athlete_data = read_data("athlete_events.csv")
-
-    while True:
-        selection = menu
+    """Entry point"""
+    athlete_data = read_data(FILE_PATH)
+    stop_program: bool = False
+    while not stop_program:
+        selection = menu()
         if selection == "years":
-            process.list_years(athlete_data)
+            display_years(athlete_data)
         elif selection == "tally":
-            pass
+            display_medal_tally(athlete_data)
         elif selection == "team":
-            pass
+            display_team_medal_tally(athlete_data)
         elif selection == "exit":
+            stop_program = False
             break
         else:
             error("Invalid Selection!")

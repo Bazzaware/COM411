@@ -2,3 +2,4 @@
 disable=
     C0114, # missing-module-docstring
     F0401, # ModulePath
+    E1111, # assignment-from-no-return

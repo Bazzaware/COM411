@@ -1,4 +1,4 @@
-from typing import Dict, Set
+from process import list_years, tally_medals, tally_team_medals
 
 _LINE_LENGTH = 85
 
@@ -27,27 +27,35 @@ def menu() -> str:
     {"[team]":<10} Tally up medals for each team
     {"[exit]":<10} Exit the program
     """)
-    user_selection = str(input("Your selection: "))
-    return user_selection.strip().lower()
+    user_selection = str(input("Your selection: ")).strip().lower()
+    return user_selection
 
 
-def display_medal_tally(tally: Dict[str, int]) -> None:
+def display_medal_tally(data: list) -> None:
     """Displays medal tally"""
+    started("Tallying medals")
+    tally = tally_medals(data)
     print(f"| {'Gold':<10} | {tally['Gold']:<10} |")
-    print(f"| {'Silver': <10} | {tally['Silver']:<10} |")
-    print(f"| {'Silver': <10 }| {tally['Silver']:<10} |")
-    print(f"| {'Bronze': <10 }| {tally['Bronze']:<10} |")
+    print(f"| {'Silver':<10} | {tally['Silver']:<10} |")
+    print(f"| {'Bronze':<10} | {tally['Bronze']:<10} |")
+    completed()
 
 
-def display_team_medal_tally(team_tally: Dict[str, Dict[str, int]]) -> None:
+def display_team_medal_tally(data: list) -> None:
     """display the name of each team and the medals the team has one"""
+    started("Tallying medals for each team")
+    team_tally = tally_team_medals(data)
     for team, tally in team_tally.items():
         print(team)
-        print(
-            f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
+        # print(
+        #     f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
+    completed()
 
 
-def display_years(years: Set[int]) -> None:
+def display_years(data: list) -> None:
     """Sort the years into descending order (the largest first) and display each year on a new line"""
+    started("Listing years")
+    years = list_years(data)
     for year in sorted(years, reverse=True):
         print(year)
+    completed()
