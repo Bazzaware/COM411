@@ -47,8 +47,8 @@ def display_team_medal_tally(data: list) -> None:
     team_tally = tally_team_medals(data)
     for team, tally in team_tally.items():
         print(team)
-        # print(
-        #     f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
+        print(
+            f"\tGold:{tally['Gold']}, Silver:{tally['Silver']}, Bronze:{tally['Bronze']}")
     completed()
 
 

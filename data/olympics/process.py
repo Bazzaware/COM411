@@ -24,22 +24,18 @@ def tally_medals(data: list) -> dict[str, int]:
 
 def tally_team_medals(data: list) -> dict[str, dict[str, int]]:
     """Returns nested dictionary"""
-    medals = {"Gold": 0, "Silver": 0, "Bronze": 0}
     team_medal_tally = {}
 
     for line in data:
         team_name = line[COL_TEAM]
-        if team_name in team_medal_tally:
+        team_medal = line[COL_MEDAL]
+        if team_medal not in ("Gold", "Silver", "Bronze"):
             continue
+
+        if team_name in team_medal_tally:
+            team_medal_tally[team_name][team_medal] += 1
         else:
-            team_medal_tally[team_name] = medals
+            team_medal_tally[team_name] = {"Gold": 0, "Silver": 0, "Bronze": 0}
+            team_medal_tally[team_name][team_medal] += 1
 
     return team_medal_tally
-
-    # medals = dict[str, int]
-    # team_medal_tally = dict[str, medals]
-
-    # if team_name in team_medal_tally.items:
-    # else:
-    #     team_medal_tally[team_name] = {"Gold": 0, "Silver": 0, "Bronze": 0}
-    #     team_medal_tally[team_name][medal] += 1
