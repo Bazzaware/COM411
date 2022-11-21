@@ -3,6 +3,11 @@ COL_TEAM = 6
 COL_YEAR = 9
 
 
+class Medals():
+    def __init__(self) -> dict[str, int]:
+        self.medal_tally = dict({"Gold": 0, "Silver": 0, "Bronze": 0})
+
+
 def list_years(data: list) -> set:
     """Returns a list of years from Data"""
     years = set()
@@ -14,12 +19,12 @@ def list_years(data: list) -> set:
 
 def tally_medals(data: list) -> dict[str, int]:
     """Returns list of medals"""
-    medal_tally = dict({"Gold": 0, "Silver": 0, "Bronze": 0})
+    medals = Medals()
     for line in data:
         medal = line[COL_MEDAL]
         if medal in ("Gold", "Silver", "Bronze"):
-            medal_tally[medal] += 1
-    return medal_tally
+            medals.medal_tally[medal] += 1
+    return medals.medal_tally
 
 
 def tally_team_medals(data: list) -> dict[str, dict[str, int]]:
