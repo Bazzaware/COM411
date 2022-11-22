@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import math
+
+line = None
+
+
+def animate(frame):
+    global line
+    x = range(0, frame)
+    y = [math.sin(math.radians(degrees)) for degrees in x]
+    line.set_data(x, y)
+
+
+def run():
+    global line
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 1720)
+    ax.set_ylim(-1, 1)
+    line, = ax.plot([], [], linewidth=3)
+    sine_animation = animation.FuncAnimation(fig,
+                                             animate,
+                                             frames=1720,
+                                             interval=1)
+    plt.show()
+
+
+run()
