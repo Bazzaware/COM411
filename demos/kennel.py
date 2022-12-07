@@ -26,23 +26,21 @@ class Kennel:
 
 
 if __name__ == "__main__":
-        k = Kennel()
+    k = Kennel()
 
-        d1 = Dog("Fido", "meh")
-        d2 = Dog("Lassie", "Lionish")
-        d3 = Dog("Butch", "Bleh")
+    d1 = Dog("Fido", "meh")
+    d2 = Dog("Lassie", "Lionish")
+    d3 = Dog("Butch", "Bleh")
 
-        if k.add_dog(d1):
-            print("Dog added")
+    if k.add_dog(d1):
+        print("Dog added")
 
-        k.exercise_dogs()
-        k.display_details()
+    k.exercise_dogs()
+    k.display_details()
 
-        k.add_dog(d2)
-        k.add_dog(d3)
+    k.add_dog(d2)
+    k.add_dog(d3)
 
-        k.exercise_dogs()
-        k.put_inside()
-        k.display_details()
-
-
+    k.exercise_dogs()
+    k.put_inside()
+    k.display_details()
