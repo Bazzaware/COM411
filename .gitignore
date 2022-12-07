@@ -1,6 +1,6 @@
 # User custom
 *scratch*
-.vscode
+.vscode/
 .conda
 
 # Byte-compiled / optimized / DLL files

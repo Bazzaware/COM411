@@ -1,4 +1,5 @@
-from String_Operator import *
+from basics.Output.String_Operator import HealthLevels, set_health_icon
+
 import unittest
 
 
