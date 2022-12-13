@@ -10,8 +10,7 @@
         "C0114,E0401,C0301"
     ],
     "python.testing.pytestArgs": [
-        "tests",
-        "-vv"
+        "."
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
