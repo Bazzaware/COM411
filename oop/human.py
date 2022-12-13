@@ -1,15 +1,10 @@
-from oop.inhabitant import Inhabitant
+from inhabitant import Inhabitant
 
 
 class Human(Inhabitant):
     def __init__(self, name="Inhabitant", age=0, energy=...):
         super().__init__(name, age, energy)
+        self.energy = energy
 
-
-if __name__ == '__main__':
-    human = Human()
-
-    print(repr(human))
-
-    human.move(10)
-
+    def move(self, distance):
+        self.energy -= distance
