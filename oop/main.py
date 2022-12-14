@@ -1,8 +1,13 @@
-from human import Human
+from FulltimeEmployee import FulltimeEmployee
+from HourlyEmployee import HourlyEmployee
+from Payroll import Payroll
 
-if __name__ == '__main__':
-    human = Human()
+payroll = Payroll()
 
-    print(repr(human))
+payroll.add(FulltimeEmployee('John', 'Doe', 6000))
+payroll.add(FulltimeEmployee('Jane', 'Doe', 6500))
+payroll.add(HourlyEmployee('Jenifer', 'Smith', 200, 50))
+payroll.add(HourlyEmployee('David', 'Wilson', 150, 100))
+payroll.add(HourlyEmployee('Kevin', 'Miller', 100, 150))
 
-    human.move(10)
+payroll.print()
