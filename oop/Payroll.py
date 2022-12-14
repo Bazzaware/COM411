@@ -7,4 +7,4 @@ class Payroll:
 
     def print(self):
         for employee in self.employee_list:
-            print(f"{employee.full_name} \t ${employee.get_salary()}")
+            print(f"{employee.full_name } £{employee.get_salary()}")

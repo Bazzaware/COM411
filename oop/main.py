@@ -4,10 +4,10 @@ from Payroll import Payroll
 
 payroll = Payroll()
 
-payroll.add(FulltimeEmployee('John', 'Doe', 6000))
-payroll.add(FulltimeEmployee('Jane', 'Doe', 6500))
-payroll.add(HourlyEmployee('Jenifer', 'Smith', 200, 50))
-payroll.add(HourlyEmployee('David', 'Wilson', 150, 100))
-payroll.add(HourlyEmployee('Kevin', 'Miller', 100, 150))
+payroll.add(FulltimeEmployee('Barry', 'Goodall', 6000))
+payroll.add(FulltimeEmployee('Rob', 'Jesson', 6500))
+payroll.add(HourlyEmployee('Rahima', 'Habib', 200, 50))
+payroll.add(HourlyEmployee('Vanessa', 'Green', 150, 100))
+payroll.add(HourlyEmployee('Nicola', 'Harrison', 100, 150))
 
 payroll.print()
