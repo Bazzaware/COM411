@@ -2,27 +2,22 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import math
 
-fig, ax = plt.subplots()
+line = None
 
 
 def animate(frame):
-    global ax
-    ax.set_xlim(0, 720)
-    ax.set_ylim(-1, 1)
+    global line
     x = range(0, frame)
-
-    y = []
-    for degrees in x:
-        y.append(math.sin(math.radians(degrees)))
-
-    # Alternatively, we can use a list comprehension as shown below:
-    # y = [math.sin(math.radians(degrees)) for degrees in x]
-
-    ax.plot(x, y)
+    y = [math.sin(math.radians(degrees)) for degrees in x]
+    line.set_data(x, y)
 
 
 def run():
     global line
+    fig, ax = plt.subplots()
+    ax.set_xlim(0, 720)
+    ax.set_ylim(-1, 1)
+    line, = ax.plot([], [], linewidth=3)
     sine_animation = animation.FuncAnimation(fig,
                                              animate,
                                              frames=720,

@@ -3,8 +3,10 @@ import matplotlib.animation as animation
 
 fig, ax = plt.subplots()
 
+
 def animate(frame):
     print(f'Frame: {frame}')
+
 
 def run():
     global fig
