@@ -1,0 +1,22 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.flake8Args": [
+        "--ignore=E501,W621"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable",
+        "C0114,E0401,C0301,E0501"
+    ],
+    "python.testing.pytestArgs": [
+        ".",
+        "-s"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSaveMode": "modifications",
+    }
+}

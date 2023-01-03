@@ -29,7 +29,7 @@ def run():
     for observation in observations:
         count = observation, observations.count(observation)
         result.add(count)
-    print(f"\nObservations:")
+    print("\nObservations:")
     for item in sorted(result):
         print(f"{item[0]} observed {item[1]} times.")
 
