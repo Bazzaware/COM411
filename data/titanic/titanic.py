@@ -1,5 +1,5 @@
 import csv
-import mymodule as mymod
+from mymodules.mymodule import clear_terminal
 import os
 
 records = []
@@ -10,10 +10,10 @@ def loadData(filePath):
     print(f"Loading data...", end="")
     with open(filePath, "r") as file:
         csvReader = csv.reader(file)
-        headings = next(csvReader)
+        next(csvReader)
         for line in csvReader:
             records.append(line)
-    print(f"Done!")
+    print("Done!")
 
 
 def displayMenu():
