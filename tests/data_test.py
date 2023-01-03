@@ -1,6 +1,7 @@
 import pytest
 from os.path import join
-from oop.Data import Data
+from oop.CsvData import CsvData
+from oop.TxtData import TxtData
 
 
 def test_import_from_csv() -> None:
@@ -18,10 +19,11 @@ def test_import_from_csv() -> None:
     file_path: str = join('data', 'files', 'csv', 'bots.csv')
 
     # act
-    result = Data(file_path)
+    data_file = CsvData(file_path)
+    data_file.import_data()
 
     # assert
-    assert result.DATA == expected_csv
+    assert data_file.data == expected_csv
 
 
 def test_import_from_txt() -> None:
@@ -38,10 +40,11 @@ def test_import_from_txt() -> None:
     file_path: str = join('data', 'files', 'txt', 'library.txt')
 
     # act
-    result = Data(file_path)
+    result = TxtData(file_path)
+    result.import_data()
 
     # assert
-    assert result.DATA == expected
+    assert result.data == expected
 
 
 def test_invalid_file_type() -> None:
@@ -49,8 +52,8 @@ def test_invalid_file_type() -> None:
     file_path: str = join('data', 'files', 'txt', 'library.bad')
     expected = 'File type not supported: .bad'
     #  act
-    with pytest.raises(TypeError) as exp:
-        Data(file_path)
+    with pytest.raises(Exception) as exp:
+        CsvData(file_path)
 
     # assert
     assert str(exp.value) == expected
@@ -62,7 +65,7 @@ def test_file_not_exits() -> None:
     expected = f'File not found:\n\t{file_path}'
     #  act
     with pytest.raises(FileNotFoundError) as exp:
-        Data(file_path)
+        CsvData(file_path)
 
     # assert
     assert str(exp.value) == expected
