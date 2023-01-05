@@ -2,7 +2,7 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: "Run Tests"
-
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches:
@@ -14,15 +14,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     python-version: ["3.8", "3.9", "3.10"]
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.8"
+          - "3.9"
+          - "3.10"
 
     steps:
       - uses: actions/checkout@v3
-      # - name: Set up Python ${{ matrix.python-version }}
-      - name: Set up Python 3.x
+      - name: Set up Python ${{ matrix.python-version }}
+        # - name: Set up Python 3.x
         uses: actions/setup-python@v4
         with:
           # Semantic version range syntax or exact version of a Python version
